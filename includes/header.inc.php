@@ -3,7 +3,7 @@
         <span class="navbar-brand">Placeholder</span>
     </nav>
     <div class="jumbotron">
-        <form action="#" method="POST">
+        <form action="#.php" method="POST">
             <div class="input-group input-group-lg">
                 <input class="form-control" type="text" name="search" placeholder="Search for Product">
                 <div class="input-group-append">
