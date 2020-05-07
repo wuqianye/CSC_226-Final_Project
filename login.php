@@ -1,16 +1,34 @@
 <html>
 	<head>
 		<title>Login</title>
-		
-		<link rel="stylesheet" href="assets/styles.css" type="text/css">
+		<!-- css -->
+		<link rel="stylesheet" href="assets/login.css" type="text/css">
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	</head>
 	<body>
-		<header class="container-fluid">
-			<nav class="navbar navbar-dark bg-dark justify-content-center">
-				<span class="navbar-brand">Placeholder</span>
-			</nav>
-		</header>
+		<div class="container-fluid">
+			<div class="container flex-container">
+				<h1 class="text-dark mt-3 mb-3">Welcome!</h1>
+				<form action="includes/login.inc.php" method = "POST">
+					<!--username-->
+					<div class="input-group input-group-lg">
+						<span class="input-group-prepend input-group-text text-white bg-dark">Username</span>
+						<input class="form-control" type="text" name="username" required>
+					</div>
+					<!--password-->
+					<div class="input-group input-group-lg">
+						<span class="input-group-prepend input-group-text text-white bg-dark">Password</span>
+						<input class="form-control" type="password" name="password" required>
+					</div>
+					<!--login-->
+					<button id="login" class="btn btn-dark btn-lg" type="submit" name="login" value="login">Login</button>					
+				</form>
+				<!-- signup -->
+				<p class="text-dark mb-0">Don't have an accout?</p>
+				<!-- jump to signup.php -->
+				<button class="btn btn-outline-dark"><a href="signup.php" class="text-dark">Create Account</a></button>
+			</div>
+		</div>
 	</body>
 </html>
