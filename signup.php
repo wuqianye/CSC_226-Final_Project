@@ -24,10 +24,9 @@
 					<!--signup-->
 					<button id="signup" class="btn btn-dark btn-lg" type="submit" name="signup" value="signup">Signup</button>					
 				</form>
-				<!-- login -->
+				<!-- login, jump to login.php -->
 				<p class="text-dark mb-0">Already have an accout?</p>
-				<!-- jump to login.php -->
-				<button class="btn btn-outline-dark"><a href="login.php" class="text-dark">Login</a></button>
+				<a href="login.php" class="text-dark"><button class="btn btn-outline-dark">Login</button></a>
 			</div>
 		</div>
 	</body>

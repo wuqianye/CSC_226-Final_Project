@@ -25,7 +25,10 @@ form {
     margin: 10px auto 16px auto;
 }
 .input-group-prepend {
-    border-top-left-radius: 18px !important;
+    border-top-left-radius: 30px !important;
+}
+input {
+    border-bottom-right-radius: 40px !important;
 }
 .btn {
     border-radius: 20px !important;
@@ -33,5 +36,6 @@ form {
     padding-right: 40px !important;
 }
 #signup {
-    padding: 10px 40px 10px 40px !important;
+    border-radius: 16px 26px 16px 26px !important;
+    padding: 10px 40px 14px 40px;
 }
