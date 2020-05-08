@@ -5,8 +5,13 @@ careful with username and password if you are using school server, delete before
 <?php
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
+    $servername = "";
+    $username = "";
+    $password = "";
+    $dbname = "";
+
     try {
-        $conn = new mysqli("localhost", "root", "", "");
+        $conn = new mysqli($servername, $username, $password, $dbname);
         $conn->set_charset("utf8mb4");
     } catch (Exception $e) {
         error_log($e->getMessage());

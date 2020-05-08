@@ -14,31 +14,47 @@
             <main class="min-vh-100">
                 <div class="container">
                     <div class="row">
-                        <!-- card -->
-                        <div class="col-lg-4 col-6">
-                            <div class="card shadow-sm">
-                                <!-- product image (php) -->
-                                <img class="card-img-top" src="https://www.staples-3p.com/s7/is/image/Staples/sp36282946_sc7?wid=512&hei=512">
-                                <div class="card-body">
-                                    <!-- product name (php) -->
-                                    <h5 class="card-title">Name</h5>
-                                    <!-- price (php) -->
-                                    <h6 class="card-subtitle">$0.00</h6>
-                                    <div class="d-flex justify-content-end">
-                                        <form class="form-inline" action="" method="POST">
-                                            <!-- quantity (php) -->
-                                            <select class="custom-select">
-                                                <option selected>1</option>
-                                                <option value="#">2</option>
-                                            </select>
-                                            <!-- add to cart (php) -->
-                                            <button class="btn btn-light"><i class="material-icons">add_shopping_cart</i></button>
-                                        </form>
+                        <?php
+                            include "includes/dbconnect.inc.php";
+
+                            $query = "SELECT Name, Price, Count, Brand, Image FROM Products";
+                            $result = mysqli_query($conn, $query);
+                            
+                            while ($item = mysqli_fetch_assoc($result)) {
+                        ?>
+                            <!-- card -->
+                            <div class="col-lg-4 col-6">
+                                <div class="card shadow-sm">
+                                    <!-- product image (php) -->
+                                    <img class="card-img-top" src=<?php $item["Image"] ?>>
+                                    <div class="card-body">
+                                        <!-- product name (php) -->
+                                        <h5 class="card-title"><?php $item["Name"] ?></h5>
+                                        <!-- price (php) -->
+                                        <h6 class="card-subtitle"><?php $item["Brand"] ?></h6>
+                                        <h6 class="card-subtitle"><?php $item["Price"] ?></h6>
+                                        <div class="d-flex justify-content-end">
+                                            <form class="form-inline" action="#" method="POST">
+                                                <!-- quantity (php) -->
+                                                <select class="custom-select">
+                                                    <?php
+                                                        for ($i = 1; $i <= $item["Count"]; $i++) {
+                                                            if ($i == 1)
+                                                                echo "<option value=".$i." name='quantity' selected>".$i."</option>";
+                                                            else
+                                                                echo "<option value=".$i." name='quantity'>".$i."</option>";
+                                                        }
+                                                    ?>
+                                                </select>
+                                                <!-- add to cart (php) -->
+                                                <button class="btn btn-light" type="submit" name="addToCart" value="addToCart"><i class="material-icons">add_shopping_cart</i></button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- card end -->
+                            <!-- card end -->
+                        <?php } ?>
                     </div>
                 </div>
             </main>

@@ -23,11 +23,11 @@
             </nav>
             <!-- search -->
             <div class="jumbotron">
-                <form action="#.php" method="POST">
+                <form action="search.php" method="GET">
                     <div class="input-group input-group-lg">
-                        <input class="form-control" type="text" name="search" placeholder="Search for Product">
+                        <input class="form-control" type="text" name="searchkey" placeholder="Search for Product">
                         <div class="input-group-append">
-                            <button id="searchbtn" type="button" class="btn btn-dark"><i class="material-icons">search</i></button>
+                            <button id="searchbtn" class="btn btn-dark" type="submit" name="searchbtn" value="true"><i class="material-icons">search</i></button>
                         </div>
                     </div>
                 </form>
