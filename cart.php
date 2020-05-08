@@ -9,7 +9,7 @@
     <body>
         <div class="bgi container-fluid">
             <?php include("includes/header.inc.php"); ?>
-            <main>
+            <main class="min-vh-100">
                 <div class="container">
                     <!-- php print info in table -->
 

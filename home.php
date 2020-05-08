@@ -11,11 +11,11 @@
     <body>
         <div class="bgi container-fluid">
             <?php include("includes/header.inc.php"); ?>
-            <main>
+            <main class="min-vh-100">
                 <div class="container">
                     <div class="row">
                         <!-- card -->
-                        <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="col-lg-4 col-6">
                             <div class="card shadow-sm">
                                 <!-- product image (php) -->
                                 <img class="card-img-top" src="https://www.staples-3p.com/s7/is/image/Staples/sp36282946_sc7?wid=512&hei=512">

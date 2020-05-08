@@ -1,9 +1,11 @@
 /* global */
-.container-fluid {
-    padding: 0px !important;
-}
 body {
     min-height: 100%;
+    min-width: 600px !important;
+}
+.container-fluid {
+    min-width: 600px !important;
+    padding: 0px !important;
 }
 .bgi {
     background-image: url("https://images.pexels.com/photos/3773836/pexels-photo-3773836.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
@@ -12,14 +14,19 @@ body {
     background-attachment: fixed;
 }
 main {
-    min-height: 100%;
     padding-top: 180px;
+}
+.container {
+    min-width: 600px !important;
 }
 form {
     margin: 0px;
 }
 
 /* header.inc.php */
+header {
+    min-width: 600px !important;
+}
 nav {
     background-image: url("https://images.pexels.com/photos/3773836/pexels-photo-3773836.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-size: 136% 800%;

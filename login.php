@@ -2,7 +2,7 @@
 	<head>
 		<title>Login</title>
 		<!-- css -->
-		<link rel="stylesheet" href="assets/login.css" type="text/css">
+		<link rel="stylesheet" href="assets/login-signup.css" type="text/css">
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	</head>
@@ -26,7 +26,7 @@
 				</form>
 				<!-- signup, jump to signup.php -->
 				<p class="text-dark mb-0">Don't have an accout?</p>
-				<a class="text-dark" href="signup.php"><button class="btn btn-outline-dark">Create Account</button></a>
+				<a class="text-dark" href="signup.php"><button id="signupLink" class="btn btn-outline-dark">Create Account</button></a>
 			</div>
 		</div>
 	</body>

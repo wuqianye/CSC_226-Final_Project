@@ -3,7 +3,6 @@ body {
     min-width: 1036px;
 }
 .container-fluid {
-    min-height: 100%;
     background-image: url("https://images.pexels.com/photos/3773836/pexels-photo-3773836.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-size: 160% 100%;
     background-position: 46% 40%;
@@ -18,7 +17,7 @@ body {
     text-align: center;
 }
 form {
-    width: 80%;
+    width: 60%;
     margin-bottom: 25px;
 }
 .input-group {
@@ -30,10 +29,19 @@ form {
 input {
     border-bottom-right-radius: 40px !important;
 }
-.btn {
+#loginLink {
+    border-radius: 20px !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+}
+#signupLink {
     border-radius: 20px !important;
 }
 #login {
+    border-radius: 16px 26px 16px 26px !important;
+    padding: 10px 40px 14px 40px;
+}
+#signup {
     border-radius: 16px 26px 16px 26px !important;
     padding: 10px 40px 14px 40px;
 }
