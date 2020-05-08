@@ -48,9 +48,9 @@
                                                     <?php
                                                         for ($i = 1; $i <= $item["Count"]; $i++) {
                                                             if ($i == 1)
-                                                                echo "<option value=".$i." name='quantity' selected>".$i."</option>";
+                                                                echo "<option name='quantity' value='".$i."' selected>".$i."</option>";
                                                             else
-                                                                echo "<option value=".$i." name='quantity'>".$i."</option>";
+                                                                echo "<option name='quantity' value='".$i."'>".$i."</option>";
                                                         }
                                                     ?>
                                                 </select>
