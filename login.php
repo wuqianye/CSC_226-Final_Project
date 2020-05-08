@@ -26,7 +26,7 @@
 				</form>
 				<!-- signup, jump to signup.php -->
 				<p class="text-dark mb-0">Don't have an accout?</p>
-				<a href="signup.php" class="text-dark"><button class="btn btn-outline-dark">Create Account</button></a>
+				<a class="text-dark" href="signup.php"><button class="btn btn-outline-dark">Create Account</button></a>
 			</div>
 		</div>
 	</body>
