@@ -1,0 +1,67 @@
+/* global */
+.container-fluid {
+    padding: 0px !important;
+}
+body {
+    min-height: 100%;
+}
+.bgi {
+    background-image: url("https://images.pexels.com/photos/3773836/pexels-photo-3773836.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: 280% 200%;
+    background-position: 48% 56%;
+    background-attachment: fixed;
+}
+main {
+    min-height: 100%;
+    padding-top: 180px;
+}
+form {
+    margin: 0px;
+}
+
+/* header.inc.php */
+nav {
+    background-image: url("https://images.pexels.com/photos/3773836/pexels-photo-3773836.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: 136% 800%;
+    background-position: 100% 100%;
+}
+#navLogo {
+    font-family: 'Megrim', cursive;
+    font-size: 26px;
+}
+.jumbotron {
+    padding: 20px 10% 20px 10% !important;
+}
+#searchbtn {
+    padding-left: 30px;
+    padding-right: 30px;
+    border-top-right-radius: 20px;
+}
+
+/* footer.inc.php */
+footer {
+    text-align: center;
+    position: relative;
+    left: 0px;
+    right: 0px;
+    bottom: 10px;
+}
+#backToTop {
+    padding: 0px 40% 0px 40%;
+    border-radius: 10px;
+    background-color: darkgrey;
+}
+
+/* home.php */
+.card {
+    margin-bottom: 30px;
+    border-color: #343a40;
+}
+.custom-select {
+    width: 80px !important;
+}
+
+/* result.php */
+
+
+/* cart.php */

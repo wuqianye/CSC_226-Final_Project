@@ -26,7 +26,7 @@
 				</form>
 				<!-- login, jump to login.php -->
 				<p class="text-dark mb-0">Already have an accout?</p>
-				<a href="login.php" class="text-dark"><button class="btn btn-outline-dark">Login</button></a>
+				<a class="text-dark" href="login.php"><button class="btn btn-outline-dark">Login</button></a>
 			</div>
 		</div>
 	</body>

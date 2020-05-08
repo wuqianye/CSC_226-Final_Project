@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Home</title>
+        <title>Search</title>
 		<!-- css -->
 		<link rel="stylesheet" href="assets/styles.css" type="text/css">
 		<!-- Bootstrap -->
