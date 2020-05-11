@@ -5,10 +5,10 @@ careful with username and password if you are using school server, delete before
 <?php
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-    $servername = "";
-    $username = "";
+    $servername = "localhost";
+    $username = "root";
     $password = "";
-    $dbname = "";
+    $dbname = "csc_226-final_project";
 
     try {
         $conn = new mysqli($servername, $username, $password, $dbname);

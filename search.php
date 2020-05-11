@@ -34,13 +34,13 @@
                             <div class="col-lg-4 col-6">
                                 <div class="card shadow-sm">
                                     <!-- product image (php) -->
-                                    <img class="card-img-top" src=<?php $item["Image"] ?>>
+                                    <img class="card-img-top" src=<?php echo $item["Image"] ?>>
                                     <div class="card-body">
                                         <!-- product name (php) -->
-                                        <h5 class="card-title"><?php $item["Name"] ?></h5>
+                                        <h5 class="card-title"><?php echo $item["Name"] ?></h5>
                                         <!-- price (php) -->
-                                        <h6 class="card-subtitle"><?php $item["Brand"] ?></h6>
-                                        <h6 class="card-subtitle"><?php $item["Price"] ?></h6>
+                                        <h6 class="card-subtitle text-secondary"><?php echo $item["Brand"] ?></h6>
+                                        <h5 class="card-subtitle mt-1">$<?php echo $item["Price"] ?></h5>
                                         <div class="d-flex justify-content-end">
                                             <form class="form-inline" action="#" method="POST">
                                                 <!-- quantity (php) -->
