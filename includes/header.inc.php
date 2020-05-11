@@ -6,6 +6,8 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <!-- Google Material Design Icons -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <!-- Font Awesome 4 Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
     </head>
@@ -19,6 +21,7 @@
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" href="cart.php"><i class="material-icons text-light">shopping_cart</i></a>
                     <!-- missing logout function -->
+                    <a class="nav-item nav-link ml-3" href="logout.inc.php"><i class="fa fa-sign-out text-light" style="font-size:24px" aria-hidden="true"></i></a>
                 </div>
             </nav>
             <!-- search -->
