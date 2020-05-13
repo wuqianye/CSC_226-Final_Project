@@ -19,8 +19,9 @@
             <nav class="navbar navbar-expand-sm navbar-dark d-flex justify-content-between bg-dark">
                 <a id="navLogo" class="navbar-brand" href="home.php">Placeholder</a>
                 <div class="navbar-nav">
+                    <!-- cart -->
                     <a class="nav-item nav-link" href="cart.php"><i class="material-icons text-light">shopping_cart</i></a>
-                    <!-- missing logout function -->
+                    <!-- logout -->
                     <a class="nav-item nav-link ml-3" href="logout.inc.php"><i class="fa fa-sign-out text-light" style="font-size:24px" aria-hidden="true"></i></a>
                 </div>
             </nav>
