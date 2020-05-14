@@ -1,3 +1,9 @@
+<?php
+    if (session_status() == 2) {
+        header("Location: home.php");
+        exit;
+    }
+?>
 <html>
 	<head>
 		<title>Login</title>
@@ -11,22 +17,22 @@
 			<div class="container flex-container">
 				<h1 class="text-dark mt-3 mb-3">Welcome!</h1>
 				<form action="includes/login.inc.php" method = "POST">
-					<!--username-->
-					<div class="input-group input-group-lg">
+					<!-- username -->
+					<div class="loginInputGroup input-group input-group-lg">
 						<span class="input-group-prepend input-group-text text-white bg-dark">Username</span>
-						<input class="form-control" type="text" name="username" required>
+						<input class="loginInput form-control" type="text" name="username" required>
 					</div>
-					<!--password-->
-					<div class="input-group input-group-lg">
+					<!-- password -->
+					<div class="loginInputGroup input-group input-group-lg">
 						<span class="input-group-prepend input-group-text text-white bg-dark">Password</span>
-						<input class="form-control" type="password" name="password" required>
+						<input class="loginInput form-control" type="password" name="password" required>
 					</div>
-					<!--login-->
+					<!-- login -->
 					<button id="login" class="btn btn-dark btn-lg" type="submit" name="login" value="login">Login</button>					
 				</form>
-				<!-- signup, jump to signup.php -->
+				<!-- link to signup.php -->
 				<p class="text-dark mb-0">Don't have an accout?</p>
-				<a class="text-dark" href="signup.php"><button id="signupLink" class="btn btn-outline-dark">Create Account</button></a>
+				<a class="text-dark" href="signup.php"><button id="signupLink" class="btn btn-outline-dark">Signup</button></a>
 			</div>
 		</div>
 	</body>

@@ -1,6 +1,8 @@
 <?php
-    if (session_status() != PHP_SESSION_ACTIVE)
-        header("Location: ../login.php");
+    if (session_status() == 1) {
+        header("Location: login.php");
+        exit;
+    }
 
     $_SESSION = [];
     session_destroy();
@@ -17,8 +19,8 @@
 		<div class="container-fluid">
 			<div class="container flex-container">
 				<h1 class="text-dark mt-3 mb-3">Successfully Logged Out!</h1>
-				<!-- login, jump to login.php -->
-				<p class="text-dark mb-0">Want to login?</p>
+				<!-- link to login.php -->
+				<p class="text-dark mb-0">Want to Login?</p>
 				<a class="text-dark" href="../login.php"><button id="loginLink" class="btn btn-outline-dark">Login</button></a>
 			</div>
 		</div>

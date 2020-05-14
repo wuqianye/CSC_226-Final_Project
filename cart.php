@@ -1,3 +1,9 @@
+<?php
+    if (session_status() == 1) {
+        header("Location: login.php");
+        exit;
+    }
+?>
 <html>
     <head>
         <title>Cart</title>
@@ -12,8 +18,14 @@
             <main class="min-vh-100">
                 <div class="container">
                     <!-- php print info in table -->
+                    <?php
+                        include "includes/dbconnect.inc.php";
+                        
+                        $query = "SELECT * FROM ";
+                        $result = mysqli_query($conn,$query);
 
-
+                    ?>
+                                <!-- display -->
                 </div>
             </main>
             <?php include("includes/footer.inc.php"); ?>    

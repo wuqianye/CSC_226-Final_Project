@@ -17,25 +17,30 @@ body {
     text-align: center;
 }
 form {
-    width: 60%;
-    margin-bottom: 25px;
+    width: 90%;
+    margin-bottom: 10px;
 }
-.input-group {
+.loginInputGroup {
     margin: 10px auto 16px auto;
 }
 .input-group-prepend {
     border-top-left-radius: 30px !important;
 }
-input {
+.loginInput {
     border-bottom-right-radius: 40px !important;
 }
-#loginLink {
-    border-radius: 20px !important;
-    padding-left: 40px !important;
-    padding-right: 40px !important;
+#signinTopLeft {
+    border-top-left-radius: 40px !important;
 }
-#signupLink {
-    border-radius: 20px !important;
+#signinTopRight {
+    border-top-right-radius: 40px !important;
+}
+#signinBottomRow {
+    border-bottom-left-radius: 40px !important;
+    border-bottom-right-radius: 40px !important;
+}
+.form-row>.col, .form-row>[class*=col-] {
+    padding: 0px !important;
 }
 #login {
     border-radius: 16px 26px 16px 26px !important;
@@ -44,4 +49,15 @@ input {
 #signup {
     border-radius: 16px 26px 16px 26px !important;
     padding: 10px 40px 14px 40px;
+    margin-top: 10px;
+}
+#loginLink {
+    border-radius: 20px !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+}
+#signupLink {
+    border-radius: 20px !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
 }

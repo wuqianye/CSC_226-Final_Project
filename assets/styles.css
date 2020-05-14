@@ -22,8 +22,10 @@ main {
 form {
     margin: 0px;
 }
-/* need @media */
-.card
+/* @media */
+.card-title {
+    min-height: 75px;
+}
 
 
 /* header.inc.php */

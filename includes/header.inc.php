@@ -1,3 +1,11 @@
+<?php
+    if (session_status() == 1) {
+        header("Location: login.php");
+        exit;
+    }
+
+    session_start();
+?>
 <html>
     <head>
         <!-- css -->
@@ -19,10 +27,11 @@
             <nav class="navbar navbar-expand-sm navbar-dark d-flex justify-content-between bg-dark">
                 <a id="navLogo" class="navbar-brand" href="home.php">Placeholder</a>
                 <div class="navbar-nav">
+                    <h5 class="nav-item nav-link align-self-center text-light mr-4 mb-0">Hi, <?php echo $_SESSION["user"] ?></h5>
                     <!-- cart -->
-                    <a class="nav-item nav-link" href="cart.php"><i class="material-icons text-light">shopping_cart</i></a>
+                    <a class="nav-item nav-link align-self-center" href="cart.php"><i class="material-icons text-light">shopping_cart</i></a>
                     <!-- logout -->
-                    <a class="nav-item nav-link ml-3" href="logout.inc.php"><i class="fa fa-sign-out text-light" style="font-size:24px" aria-hidden="true"></i></a>
+                    <a class="nav-item nav-link align-self-center ml-3" href="includes/logout.inc.php"><i class="fa fa-sign-out text-light" style="font-size:24px" aria-hidden="true"></i></a>
                 </div>
             </nav>
             <!-- search -->

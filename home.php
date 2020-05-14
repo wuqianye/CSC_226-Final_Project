@@ -1,3 +1,9 @@
+<?php
+    if (session_status() == 1) {
+        header("Location: login.php");
+        exit;
+    }
+?>
 <html>
     <head>
         <title>Home</title>
@@ -22,39 +28,41 @@
 
                             while ($item = mysqli_fetch_assoc($result)) {
                         ?>
-                            <!-- card -->
-                            <div class="col-lg-4 col-6">
-                                <div class="card shadow-sm">
-                                    <!-- product image (php) -->
-                                    <img class="card-img-top" src=<?php echo $item["Image"] ?>>
-                                    <div class="card-body">
-                                        <!-- product name (php) -->
-                                        <h5 class="card-title"><?php echo $item["Name"] ?></h5>
-                                        <!-- price (php) -->
-                                        <h6 class="card-subtitle text-secondary"><?php echo $item["Brand"] ?></h6>
-                                        <h5 class="card-subtitle mt-1">$<?php echo $item["Price"] ?></h5>
-                                        <div class="d-flex justify-content-end">
-                                            <form class="form-inline" action="#" method="POST">
-                                                <!-- quantity (php) -->
-                                                <select class="custom-select">
-                                                    <?php
-                                                        for ($i = 1; $i <= $item["Count"]; $i++) {
-                                                            if ($i == 1)
-                                                                echo "<option name='quantity' value='".$i."' selected>".$i."</option>";
-                                                            else
-                                                                echo "<option name='quantity' value='".$i."'>".$i."</option>";
-                                                        }
-                                                    ?>
-                                                </select>
-                                                <!-- add to cart (php) -->
-                                                <button class="btn btn-light" type="submit" name="addToCart" value="addToCart"><i class="material-icons">add_shopping_cart</i></button>
-                                            </form>
+                                <!-- card -->
+                                <div class="col-lg-4 col-6">
+                                    <div class="card shadow-sm">
+                                        <!-- product image (php) -->
+                                        <img class="card-img-top" src=<?php echo $item["Image"] ?>>
+                                        <div class="card-body">
+                                            <!-- product name (php) -->
+                                            <h5 class="card-title"><?php echo $item["Name"] ?></h5>
+                                            <!-- price (php) -->
+                                            <h6 class="card-subtitle text-secondary"><?php echo $item["Brand"] ?></h6>
+                                            <h5 class="card-subtitle mt-1">$<?php echo $item["Price"] ?></h5>
+                                            <div class="d-flex justify-content-end">
+                                                <form class="form-inline" action="#" method="POST">
+                                                    <!-- quantity (php) -->
+                                                    <select class="custom-select">
+                                                        <?php
+                                                            for ($i = 1; $i <= $item["Count"]; $i++) {
+                                                                if ($i == 1)
+                                                                    echo "<option name='quantity' value='".$i."' selected>".$i."</option>";
+                                                                else
+                                                                    echo "<option name='quantity' value='".$i."'>".$i."</option>";
+                                                            }
+                                                        ?>
+                                                    </select>
+                                                    <!-- add to cart (php) -->
+                                                    <button class="btn btn-light" type="submit" name="addToCart" value="addToCart"><i class="material-icons">add_shopping_cart</i></button>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- card end -->
-                        <?php } ?>
+                                <!-- card end -->
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
             </main>
