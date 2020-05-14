@@ -29,7 +29,7 @@
                             $searchkey = trim(stripslashes(htmlspecialchars($_GET["searchkey"])));
                             $stmtparam = "%$searchkey%";
                             
-                            $query = "SELECT Name, Price, Count, Brand, Image FROM Products WHERE Name LIKE ?";
+                            $query = "SELECT name, price, count, brand, image FROM products WHERE name LIKE ?";
                             $stmt = $conn->prepare($query);
                             $stmt->bind_param("s", $stmtparam);
                             $stmt->execute();
@@ -43,19 +43,19 @@
                                 <div class="col-lg-4 col-6">
                                     <div class="card shadow-sm">
                                         <!-- product image (php) -->
-                                        <img class="card-img-top" src=<?php echo $item["Image"] ?>>
+                                        <img class="card-img-top" src=<?php echo $item["Iimage"] ?>>
                                         <div class="card-body">
                                             <!-- product name (php) -->
-                                            <h5 class="card-title"><?php echo $item["Name"] ?></h5>
+                                            <h5 class="card-title"><?php echo $item["name"] ?></h5>
                                             <!-- price (php) -->
-                                            <h6 class="card-subtitle text-secondary"><?php echo $item["Brand"] ?></h6>
-                                            <h5 class="card-subtitle mt-1">$<?php echo $item["Price"] ?></h5>
+                                            <h6 class="card-subtitle text-secondary"><?php echo $item["brand"] ?></h6>
+                                            <h5 class="card-subtitle mt-1">$<?php echo $item["price"] ?></h5>
                                             <div class="d-flex justify-content-end">
                                                 <form class="form-inline" action="#" method="POST">
                                                     <!-- quantity (php) -->
                                                     <select class="custom-select">
                                                         <?php
-                                                            for ($i = 1; $i <= $item["Count"]; $i++) {
+                                                            for ($i = 1; $i <= $item["count"]; $i++) {
                                                                 if ($i == 1)
                                                                     echo "<option name='quantity' value='".$i."' selected>".$i."</option>";
                                                                 else
