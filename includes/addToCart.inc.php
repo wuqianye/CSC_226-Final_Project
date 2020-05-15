@@ -2,13 +2,15 @@
     if (session_status() == 1) {
         header("Location: login.php");
         exit;
+    } else if (!isset($_POST["addToCart"])) {
+        header("Location: ../home.php");
     }
 
     session_start();
 ?>
 <html>
 	<head>
-		<title>Logged out</title>
+		<title>Add-to-Cart</title>
 		<!-- css -->
 		<link rel="stylesheet" href="../assets/substyles.css" type="text/css">
 		<!-- Bootstrap -->
@@ -48,7 +50,7 @@
                             $stmt_update->bind_param("ii", $quantity, $result["orderID"]);
                             if ($stmt_update->execute()) {
                 ?>
-                                <h1 class="text-dark mt-3 mb-3">Added to Cart!</h1>
+                                <h1 class="text-dark mt-3 mb-3">Added to Cart</h1>
                 <?php
                             } else {
                 ?>
@@ -64,10 +66,10 @@
 
                             $query_insert = "INSERT INTO orders (customerID, productID, itemCount) VALUES (?, ?, ?)";
                             $stmt_update = $conn->prepare($query_upate);
-                            $stmt_update->bind_param("iii", $result[0], $productID, $quantity);
+                            $stmt_update->bind_param("iii", $result_id[0], $productID, $quantity);
                             if ($stmt_insert->execute()) {
                 ?>
-                                <h1 class="text-dark mt-3 mb-3">Added to Cart!</h1>
+                                <h1 class="text-dark mt-3 mb-3">Added to Cart</h1>
                 <?php
                             } else {
                 ?>

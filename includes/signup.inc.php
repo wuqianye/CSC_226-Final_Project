@@ -73,7 +73,7 @@
                             if ($stmt_insert->execute()) {
                 ?>
                                 <!-- success -->
-                                <h1 class="text-dark mt-3 mb-3">Successfully Signed Up!</h1>
+                                <h1 class="text-dark mt-3 mb-3">Successfully Signed Up</h1>
                                 <!-- link to login.php -->
                                 <p class="text-dark mb-0">Want to Login?</p>
                                 <a class="text-dark" href="../login.php"><button id="loginLink" class="btn btn-outline-dark">Login</button></a>
@@ -81,7 +81,7 @@
                             } else {
                 ?>
                                 <!-- failed -->
-                                <h1 class="text-dark mt-3 mb-3">Signup Failed! :(</h1>
+                                <h1 class="text-dark mt-3 mb-3">Signup Failed</h1>
                                 <!-- link to signup.php -->
                                 <p class="text-dark mb-0">Signup Again</p>
                                 <a class="text-dark" href="../signup.php"><button id="signupLink" class="btn btn-outline-dark">Signup</button></a>

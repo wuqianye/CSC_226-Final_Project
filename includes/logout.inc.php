@@ -9,7 +9,7 @@
 ?>
 <html>
 	<head>
-		<title>Logged out</title>
+		<title>Logout</title>
 		<!-- css -->
 		<link rel="stylesheet" href="../assets/substyles.css" type="text/css">
 		<!-- Bootstrap -->
@@ -18,7 +18,7 @@
 	<body>
 		<div class="container-fluid">
 			<div class="container flex-container">
-				<h1 class="text-dark mt-3 mb-3">Successfully Logged Out!</h1>
+				<h1 class="text-dark mt-3 mb-3">Successfully Logged Out</h1>
 				<!-- link to login.php -->
 				<p class="text-dark mb-0">Want to Login?</p>
 				<a class="text-dark" href="../login.php"><button id="loginLink" class="btn btn-outline-dark">Login</button></a>

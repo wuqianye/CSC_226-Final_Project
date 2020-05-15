@@ -64,7 +64,7 @@ footer {
     background-color: darkgrey;
 }
 
-/* home.php */
+/* home.php & search.php*/
 .card {
     margin-bottom: 30px;
     border-color: #343a40;
@@ -73,7 +73,7 @@ footer {
     width: 80px !important;
 }
 
-/* result.php */
-
-
 /* cart.php */
+td {
+    vertical-align: middle !important;
+}
