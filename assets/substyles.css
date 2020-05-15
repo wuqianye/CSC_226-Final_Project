@@ -51,12 +51,7 @@ form {
     padding: 10px 40px 14px 40px;
     margin-top: 10px;
 }
-#loginLink {
-    border-radius: 20px !important;
-    padding-left: 40px !important;
-    padding-right: 40px !important;
-}
-#signupLink {
+.linkbtn {
     border-radius: 20px !important;
     padding-left: 40px !important;
     padding-right: 40px !important;

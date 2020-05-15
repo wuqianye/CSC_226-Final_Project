@@ -29,12 +29,11 @@
                             $searchkey = trim(stripslashes(htmlspecialchars($_GET["searchkey"])));
                             $stmtparam = "%$searchkey%";
                             
-                            $query = "SELECT name, price, count, brand, image FROM products WHERE name LIKE ?";
+                            $query = "SELECT id, name, price, count, brand, image FROM products WHERE name LIKE ?";
                             $stmt = $conn->prepare($query);
                             $stmt->bind_param("s", $stmtparam);
                             $stmt->execute();
                             $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-
                             if (!$result) exit ("No Result");
 
                             foreach ($result as $item) {
@@ -43,7 +42,7 @@
                                 <div class="col-lg-4 col-6">
                                     <div class="card shadow-sm">
                                         <!-- product image (php) -->
-                                        <img class="card-img-top" src=<?php echo $item["Iimage"] ?>>
+                                        <img class="card-img-top" src=<?php echo $item["image"] ?>>
                                         <div class="card-body">
                                             <!-- product name (php) -->
                                             <h5 class="card-title"><?php echo $item["name"] ?></h5>
@@ -51,7 +50,9 @@
                                             <h6 class="card-subtitle text-secondary"><?php echo $item["brand"] ?></h6>
                                             <h5 class="card-subtitle mt-1">$<?php echo $item["price"] ?></h5>
                                             <div class="d-flex justify-content-end">
-                                                <form class="form-inline" action="#" method="POST">
+                                                <form class="form-inline" action="includes/addToCart.inc.php" method="POST">
+                                                    <!-- product id -->
+                                                    <input type="hidden" name="productID" value="<?php echo $item["id"] ?>">
                                                     <!-- quantity (php) -->
                                                     <select class="custom-select">
                                                         <?php

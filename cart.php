@@ -1,9 +1,9 @@
-<?php
+<!--?php
     if (session_status() == 1) {
         header("Location: login.php");
         exit;
     }
-?>
+?-->
 <html>
     <head>
         <title>Cart</title>

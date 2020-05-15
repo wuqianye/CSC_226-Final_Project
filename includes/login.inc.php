@@ -1,6 +1,8 @@
 <?php
-    //Checks if the user is logged in, then redirects to the home page.
-    if (!isset($_POST['login'])) {
+    if (session_status() == 2) {
+        header("Location: home.php");
+        exit;
+    } else if (!isset($_POST['login'])) {
         header("Location: ../login.php");
         exit;
     }
@@ -9,7 +11,7 @@
 	<head>
 		<title>Login</title>
 		<!-- css -->
-		<link rel="stylesheet" href="../assets/login-signup.css" type="text/css">
+		<link rel="stylesheet" href="../assets/substyles.css" type="text/css">
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	</head>
