@@ -23,7 +23,7 @@
     <body>
         <header class="container-fluid fixed-top">
             <!-- back to top -->
-            <a name="top"></a>
+            <input type="hidden" name="top" disabled>
             <!-- navbar -->
             <nav class="navbar navbar-expand-sm navbar-dark d-flex justify-content-between bg-dark">
                 <a id="navLogo" class="navbar-brand" href="home.php">Placeholder</a>
