@@ -1,12 +1,14 @@
 <?php
-    if (session_status() == 1) {
+    //error_reporting(0);
+    session_start();
+    
+    if ($_SESSION["user"] == NULL) {
         header("Location: login.php");
         exit;
     } else if (!isset($_POST["addToCart"])) {
         header("Location: ../home.php");
+        exit;
     }
-
-    session_start();
 ?>
 <html>
 	<head>
@@ -65,8 +67,8 @@
                             $result_id = $stmt_id->get_result()->fetch_row();
 
                             $query_insert = "INSERT INTO orders (customerID, productID, itemCount) VALUES (?, ?, ?)";
-                            $stmt_update = $conn->prepare($query_upate);
-                            $stmt_update->bind_param("iii", $result_id[0], $productID, $quantity);
+                            $stmt_insert = $conn->prepare($query_insert);
+                            $stmt_insert->bind_param("iii", $result_id[0], $productID, $quantity);
                             if ($stmt_insert->execute()) {
                 ?>
                                 <h1 class="text-dark mt-3 mb-3">Added to Cart</h1>

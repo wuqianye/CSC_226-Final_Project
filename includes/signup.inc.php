@@ -1,5 +1,11 @@
 <?php
-    if (!isset($_POST['signup'])) {
+    error_reporting(0);
+    session_start();
+
+    if ($_SESSION["user"] != NULL) {
+        header("Location: ../home.php");
+        exit;
+    } else if (!isset($_POST['signup'])) {
         header("Location: ../signup.php");
         exit;
     }
@@ -46,7 +52,7 @@
                             <h1 class="text-dark mt-3 mb-3">Username Taken</h1>
 				            <!-- link to signup.php -->
                             <p class="text-dark mb-0">Signup Again</p>
-                            <a class="text-dark" href="../signup.php"><button id="signupLink" class="btn btn-outline-dark">Signup</button></a>
+                            <a class="text-dark" href="../signup.php"><button class="linkbtn btn btn-outline-dark">Signup</button></a>
                 <?php
                         } else if ($result_username == NULL & $result_email != NULL) {
                 ?>
@@ -54,7 +60,7 @@
                             <h1 class="text-dark mt-3 mb-3">Email Taken</h1>
 				            <!-- link to signup.php -->
                             <p class="text-dark mb-0">Signup Again</p>
-                            <a class="text-dark" href="../signup.php"><button id="signupLink" class="btn btn-outline-dark">Signup</button></a>
+                            <a class="text-dark" href="../signup.php"><button class="linkbtn btn btn-outline-dark">Signup</button></a>
                 <?php
                         } else if ($result_username != NULL & $result_email != NULL) {
                 ?>
@@ -62,7 +68,7 @@
                             <h1 class="text-dark mt-3 mb-3">Username and Email Taken</h1>
 				            <!-- link to signup.php -->
                             <p class="text-dark mb-0">Signup Again</p>
-                            <a class="text-dark" href="../signup.php"><button id="signupLink" class="btn btn-outline-dark">Signup</button></a>
+                            <a class="text-dark" href="../signup.php"><button class="linkbtn btn btn-outline-dark">Signup</button></a>
                 <?php
                         } else {
                             //insert new user into "customers"
@@ -76,7 +82,7 @@
                                 <h1 class="text-dark mt-3 mb-3">Successfully Signed Up</h1>
                                 <!-- link to login.php -->
                                 <p class="text-dark mb-0">Want to Login?</p>
-                                <a class="text-dark" href="../login.php"><button id="loginLink" class="btn btn-outline-dark">Login</button></a>
+                                <a class="text-dark" href="../login.php"><button class="linkbtn btn btn-outline-dark">Login</button></a>
                 <?php
                             } else {
                 ?>
@@ -84,7 +90,7 @@
                                 <h1 class="text-dark mt-3 mb-3">Signup Failed</h1>
                                 <!-- link to signup.php -->
                                 <p class="text-dark mb-0">Signup Again</p>
-                                <a class="text-dark" href="../signup.php"><button id="signupLink" class="btn btn-outline-dark">Signup</button></a>
+                                <a class="text-dark" href="../signup.php"><button class="linkbtn btn btn-outline-dark">Signup</button></a>
                 <?php
                             }
                         }

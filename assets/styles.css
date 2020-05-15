@@ -22,11 +22,6 @@ main {
 form {
     margin: 0px;
 }
-/* @media */
-.card-title {
-    min-height: 75px;
-}
-
 
 /* header.inc.php */
 header {
@@ -44,7 +39,7 @@ nav {
 .jumbotron {
     padding: 20px 10% 20px 10% !important;
 }
-#searchbtn {
+#search {
     padding-left: 30px;
     padding-right: 30px;
     border-top-right-radius: 20px;
@@ -68,6 +63,14 @@ footer {
 .card {
     margin-bottom: 30px;
     border-color: #343a40;
+}
+.card-title {
+    min-height: 75px;
+}
+@media all and (max-width: 768px) {
+    .card-title {
+        min-height: 96px;
+    }
 }
 .custom-select {
     width: 80px !important;

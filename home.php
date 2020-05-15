@@ -1,9 +1,3 @@
-<?php
-    if (session_status() == 1) {
-        header("Location: login.php");
-        exit;
-    }
-?>
 <html>
     <head>
         <title>Home</title>
@@ -44,18 +38,18 @@
                                                     <!-- product id -->
                                                     <input type="hidden" name="productID" value="<?php echo $item["id"] ?>">
                                                     <!-- quantity (php) -->
-                                                    <select class="custom-select">
+                                                    <select class="custom-select" name="quantity">
                                                         <?php
                                                             for ($i = 1; $i <= $item["count"]; $i++) {
                                                                 if ($i == 1)
-                                                                    echo "<option name='quantity' value='".$i."' selected>".$i."</option>";
+                                                                    echo "<option value='".$i."' selected>".$i."</option>";
                                                                 else
-                                                                    echo "<option name='quantity' value='".$i."'>".$i."</option>";
+                                                                    echo "<option value='".$i."'>".$i."</option>";
                                                             }
                                                         ?>
                                                     </select>
                                                     <!-- add to cart (php) -->
-                                                    <button class="btn btn-light" type="submit" name="addToCart" value="addToCart"><i class="material-icons">add_shopping_cart</i></button>
+                                                    <button class="btn btn-light" type="submit" name="addToCart"><i class="material-icons">add_shopping_cart</i></button>
                                                 </form>
                                             </div>
                                         </div>

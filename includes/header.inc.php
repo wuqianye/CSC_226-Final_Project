@@ -1,10 +1,11 @@
 <?php
-    if (session_status() == 1) {
+    error_reporting(0);
+    session_start();
+
+    if ($_SESSION["user"] == NULL) {
         header("Location: login.php");
         exit;
     }
-
-    session_start();
 ?>
 <html>
     <head>
@@ -31,7 +32,9 @@
                     <!-- cart -->
                     <a class="nav-item nav-link align-self-center" href="cart.php"><i class="material-icons text-light">shopping_cart</i></a>
                     <!-- logout -->
-                    <a class="nav-item nav-link align-self-center ml-3" href="includes/logout.inc.php"><i class="fa fa-sign-out text-light" style="font-size:24px" aria-hidden="true"></i></a>
+                    <form action="includes/logout.inc.php" method="POST">
+                        <a class="nav-item nav-link align-self-center ml-3" href="includes/logout.inc.php"><button type="submit" name="logout" style="background-color:transparent; border:none"><i class="fa fa-sign-out text-light" style="font-size:24px" aria-hidden="true"></i></button></a>
+                    </form>
                 </div>
             </nav>
             <!-- search -->
@@ -40,7 +43,7 @@
                     <div class="input-group input-group-lg">
                         <input class="form-control" type="text" name="searchkey" placeholder="Search for Product">
                         <div class="input-group-append">
-                            <button id="searchbtn" class="btn btn-dark" type="submit" name="searchbtn" value="true"><i class="material-icons">search</i></button>
+                            <button id="searchbtn" class="btn btn-dark" type="submit" name="search" value="true"><i class="material-icons">search</i></button>
                         </div>
                     </div>
                 </form>

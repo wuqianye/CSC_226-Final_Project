@@ -1,9 +1,13 @@
 <?php
-    if (session_status() == 1) {
+    error_reporting(0);
+    session_start();
+
+    if ($_SESSION["user"] == NULL) {
         header("Location: ../login.php");
         exit;
-    } else if (!isset($_POST["delete"])) {
+    } else if (!isset($_POST["update"])) {
         header("Location: ../cart.php");
+        exit;
     }
 ?>
 <html>

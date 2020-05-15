@@ -1,5 +1,8 @@
 <?php
-    if (session_status() == 2) {
+    error_reporting(0);
+    session_start();
+
+    if ($_SESSION["user"] != NULL) {
         header("Location: home.php");
         exit;
     }
@@ -44,7 +47,7 @@
                         </div>
 					</div>
 					<!--signup-->
-					<button id="signup" class="btn btn-dark btn-lg" type="submit" name="signup" value="signup">Signup</button>					
+					<button id="signup" class="btn btn-dark btn-lg" type="submit" name="signup">Signup</button>					
 				</form>
 				<!-- link to login.php -->
 				<p class="text-dark mb-0">Already have an accout?</p>

@@ -1,8 +1,11 @@
 <?php
-    if (session_status() == 1) {
+    error_reporting(0);
+    session_start();
+
+    if ($_SESSION["user"] == NULL) {
         header("Location: login.php");
         exit;
-    } else if (!isset($_POST['searchbtn'])) {
+    } else if (!isset($_GET["search"])) {
         header("Location: home.php");
         exit;
     }
@@ -26,53 +29,55 @@
                         <?php
                             include "includes/dbconnect.inc.php";
 
-                            $searchkey = trim(stripslashes(htmlspecialchars($_GET["searchkey"])));
-                            $stmtparam = "%$searchkey%";
-                            
-                            $query = "SELECT id, name, price, count, brand, image FROM products WHERE name LIKE ?";
-                            $stmt = $conn->prepare($query);
-                            $stmt->bind_param("s", $stmtparam);
-                            $stmt->execute();
-                            $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-                            if (!$result) exit ("No Result");
+                            if (isset($_GET["search"])) {
+                                $searchkey = trim(stripslashes(htmlspecialchars($_GET["searchkey"])));
+                                $stmtparam = "%$searchkey%";
+                                
+                                $query = "SELECT id, name, price, count, brand, image FROM products WHERE name LIKE ?";
+                                $stmt = $conn->prepare($query);
+                                $stmt->bind_param("s", $stmtparam);
+                                $stmt->execute();
+                                $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+                                if (!$result) exit ("No Result");
 
-                            foreach ($result as $item) {
+                                foreach ($result as $item) {
                         ?>
-                                <!-- card -->
-                                <div class="col-lg-4 col-6">
-                                    <div class="card shadow-sm">
-                                        <!-- product image (php) -->
-                                        <img class="card-img-top" src=<?php echo $item["image"] ?>>
-                                        <div class="card-body">
-                                            <!-- product name (php) -->
-                                            <h5 class="card-title"><?php echo $item["name"] ?></h5>
-                                            <!-- price (php) -->
-                                            <h6 class="card-subtitle text-secondary"><?php echo $item["brand"] ?></h6>
-                                            <h5 class="card-subtitle mt-1">$<?php echo $item["price"] ?></h5>
-                                            <div class="d-flex justify-content-end">
-                                                <form class="form-inline" action="includes/addToCart.inc.php" method="POST">
-                                                    <!-- product id -->
-                                                    <input type="hidden" name="productID" value="<?php echo $item["id"] ?>">
-                                                    <!-- quantity (php) -->
-                                                    <select class="custom-select">
-                                                        <?php
-                                                            for ($i = 1; $i <= $item["count"]; $i++) {
-                                                                if ($i == 1)
-                                                                    echo "<option name='quantity' value='".$i."' selected>".$i."</option>";
-                                                                else
-                                                                    echo "<option name='quantity' value='".$i."'>".$i."</option>";
-                                                            }
-                                                        ?>
-                                                    </select>
-                                                    <!-- add to cart (php) -->
-                                                    <button class="btn btn-light" type="submit" name="addToCart" value="addToCart"><i class="material-icons">add_shopping_cart</i></button>
-                                                </form>
+                                    <!-- card -->
+                                    <div class="col-lg-4 col-6">
+                                        <div class="card shadow-sm">
+                                            <!-- product image (php) -->
+                                            <img class="card-img-top" src=<?php echo $item["image"] ?>>
+                                            <div class="card-body">
+                                                <!-- product name (php) -->
+                                                <h5 class="card-title"><?php echo $item["name"] ?></h5>
+                                                <!-- price (php) -->
+                                                <h6 class="card-subtitle text-secondary"><?php echo $item["brand"] ?></h6>
+                                                <h5 class="card-subtitle mt-1">$<?php echo $item["price"] ?></h5>
+                                                <div class="d-flex justify-content-end">
+                                                    <form class="form-inline" action="includes/addToCart.inc.php" method="POST">
+                                                        <!-- product id -->
+                                                        <input type="hidden" name="productID" value="<?php echo $item["id"] ?>">
+                                                        <!-- quantity (php) -->
+                                                        <select class="custom-select" name="quantity">
+                                                            <?php
+                                                                for ($i = 1; $i <= $item["count"]; $i++) {
+                                                                    if ($i == 1)
+                                                                        echo "<option value='".$i."' selected>".$i."</option>";
+                                                                    else
+                                                                        echo "<option value='".$i."'>".$i."</option>";
+                                                                }
+                                                            ?>
+                                                        </select>
+                                                        <!-- add to cart (php) -->
+                                                        <button class="btn btn-light" type="submit" name="addToCart"><i class="material-icons">add_shopping_cart</i></button>
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- card end -->
+                                    <!-- card end -->
                         <?php
+                                }
                             }
                         ?>
                     </div>

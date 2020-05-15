@@ -1,9 +1,3 @@
-<?php
-    if (session_status() == 1) {
-        header("Location: login.php");
-        exit;
-    }
-?>
 <html>
     <head>
         <title>Cart</title>
@@ -50,13 +44,13 @@
                                         <form action="includes/updateOrder.inc.php" method="POST">
                                             <input type="hidden" name="orderID" value="<?php echo $item['orderID'] ?>">
                                             <div class="form-row">
-                                                <select class="custom-select">
+                                                <select class="custom-select" name="quantity">
                                                 <?php
                                                     for ($i = 1; $i <= $item["count"]; $i++) {
                                                         if ($i == $item["itemCount"])
-                                                            echo "<option name='quantity' value='".$i."' selected>".$i."</option>";
+                                                            echo "<option value='".$i."' selected>".$i."</option>";
                                                         else
-                                                            echo "<option name='quantity' value='".$i."'>".$i."</option>";
+                                                            echo "<option value='".$i."'>".$i."</option>";
                                                     }
                                                 ?>
                                             </select>
